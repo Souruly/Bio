@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+   </head>
+   <body>
+      <script>
+         var sequenceLength = 20;
+         var numberOfSequences = 100;
+         var originalSequence = [];
+         var sequences = [] //population
+         var dna = ['A','G','T','C'];
+         var numberOfGenerations = 100;
+         var mutationRate = 0.0001 //per base and generation
+
+         function random_base()
+         {
+            var p = Math.floor(Math.random()*4);
+            //console.log(dna[p]);
+            return dna[p];
+         }
+
+         function generate_first_sequence()
+         {
+            for(var i=0 ; i<sequenceLength ; i++)
+            {
+               originalSequence.push(random_base());
+            }
+         }
+
+         function generate_first_generation()
+         {
+            generate_first_sequence();
+            for(var i=0 ; i<numberOfSequences ; i++)
+            {
+               sequences.push(originalSequence.slice());
+            }
+         }
+
+         function print_sequences()
+         {
+            for(var i=0 ; i<numberOfSequences ; i++)
+            {
+               print_sequence(sequences[i]);
+            }
+         }
+
+         function print_sequence(sequence)
+         {
+            var sequenceString = [];
+            for(var i = 0 ; i<sequence.length ; i++)
+            {
+               sequenceString = sequenceString + sequence[i];
+            }
+            console.log(sequenceString)
+         }
+
+         function run_generations()
+         {
+            for(var i = 0 ; i<numberOfGenerations ; i++)
+            {
+               for(var j = 0 ; j<numberOfSequences ; j++)
+               {
+                  for(var k = 0 ; k<sequenceLength ; k++)
+                  {
+                     if(Math.random()<mutationRate)
+                     {
+                        sequences[j][k] = random_base();
+                     }
+                  }
+               }
+            }
+         }
+
+         generate_first_generation();
+         print_sequences();
+         run_generations();
+         print_sequences();
+      </script>
+   </body>
+
+</html>

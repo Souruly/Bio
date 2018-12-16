@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <h1>See Console--></h1>
+      <script>
+         var a1a1 = 0.30;
+         var a2a2 = 0.25;
+         var a1a2 = 1 - (a1a1 + a2a2);
+         var percentage = "%"
+         var bar = "||"
+
+         var p = a1a1 + (a1a2 / 2);
+         var q = 1 - p;
+
+         function create_next_generation()
+         {
+            a1a1 = p * p;
+            a1a2 = 2 * p * q;
+            a2a2 = q * q;
+         }
+         var i;
+         for(i=0;i<6;i++)
+         {
+            console.log("Generation " ,i," :",Math.round(a1a1*100),percentage,bar,Math.round(a1a2*100),percentage,bar,Math.round(a2a2*100),percentage);
+            create_next_generation();
+         }
+      </script>
+   </head>
+
+   <body>
+
+   </body>
+
+</html>
