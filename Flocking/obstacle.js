@@ -5,7 +5,7 @@ function Obstacle(x,y)
 
   this.show = function()
   {
-    var c = map(repelSlider.value(),0,20,51,232);
+    var c = map(repelSlider.value(),0,10,51,232);
     fill(c,51,51);
     stroke(255);
     strokeWeight(0.1);

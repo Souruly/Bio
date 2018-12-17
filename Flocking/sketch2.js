@@ -36,7 +36,7 @@ function setup()
   seperateRadiusSlider.position(1000,185);
   alignSlider = createSlider(0,20,1.0,0.5);
   alignSlider.position(930,250);
-  repelSlider = createSlider(0,20,20.0,0.5);
+  repelSlider = createSlider(0,10,5.0,0.5);
   repelSlider.position(850,320);
   repelRadiusSlider = createSlider(0,100,100,1);
   repelRadiusSlider.position(1000,320);
@@ -59,7 +59,7 @@ function draw()
    text("Short Range Repulsion",820,180);
    text("Repulsion Radius",1000,180);
    text("Alignment",950,245);
-   text("Obstacle Detection",850,310);
+   text("Obstacle Awareness",850,310);
    text("Detection Radius",1000,310);
    var s = "Click anywhere to add new";
    textSize(20);
@@ -67,6 +67,8 @@ function draw()
    textSize(22);
    fill(255,0,0);
    text("obstacles", 1075, 450);
+
+   setSliderValuesAsAttributes();
 
    for(var i=0;i<Birds.length;i++)
    {
@@ -77,6 +79,28 @@ function draw()
    {
        Obstacles[i].show();
    }
+}
+
+function setSliderValuesAsAttributes()
+{
+  nR = neighborSlider.value();
+  attrM = attractSlider.value();
+  sepM = seperateSlider.value();
+  sepD = seperateRadiusSlider.value();
+  aM = alignSlider.value();
+  oM = repelSlider.value();
+  oR = repelRadiusSlider.value();
+
+  for(var i=0;i<Birds.length;i++)
+  {
+      Birds[i].neighborRadius = nR;
+      Birds[i].attractionMultiplier = attrM;
+      Birds[i].separationMultiplier = sepM;
+      Birds[i].alignMultiplier = aM;
+      Birds[i].desiredSeparation = sepD;
+      Birds[i].obstacleMultiplier = oM;
+      Birds[i].obstacleSeperation = oR;
+  }
 }
 
 function mousePressed()
