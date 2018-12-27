@@ -41,7 +41,7 @@ function setup()
      graphPoints.push(gp);
    }
 
-   readMeLink = createA('http://p5js.org/', 'How it works');
+   readMeLink = createA('https://github.com/Souruly/Bio/blob/master/Temporal%20Prediction%20in%20Retinal%20Cells%201/Readme.md', 'How it works');
    readMeLink.position(900,250);
 }
 
