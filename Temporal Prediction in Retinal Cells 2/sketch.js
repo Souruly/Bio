@@ -2,6 +2,8 @@ let blobs = [];
 let lastCount=0;
 let counter=0;
 let img;
+let backG = 192;
+// let randLoop;
 
 function preload()
 {
@@ -23,9 +25,12 @@ function setup()
      blobs.push(b);
    }
    img.resize(400,0);
+
+   // randLoop = round(random(5,15));
+   // console.log(randLoop);
 }
 
-function draw() 
+function draw()
 {
    background(240);
    image(img,700,300)
@@ -46,7 +51,7 @@ function draw()
 
 function drawStructure()
 {
-  fill(192);
+  fill(backG);
   rect(0,0,600,600);
   stroke(0);
   strokeWeight(2);
@@ -58,11 +63,13 @@ function drawStructure()
   line(600,100,1200,100);
 
   noStroke();
+  fill(0);
+  textSize(60)
+  text("+",300,300);
   fill(51);
-  textSize(32);
+  textSize(40);
   text("Temporal Prediction in the Retina",900,50);
   textSize(20);
-  text("+",300,300);
   text("Concentrate on the '+' sign and the pink cicles will start to disappear.\n Eventually, you'll just see a green circle orbitting the '+' symbol.",700,100,400,100);
   noFill();
 }
