@@ -15,8 +15,8 @@ function setup()
      graphPoints.push(gp);
    }
 
-   link = createA('souruly.github.io', 'Explaination');
-   link.position(1090,420);
+   link = createA('https://youtu.be/obAHnwp9tOM?t=246', 'Explaination');
+   link.position(1090,520);
 
    generateNewSignals();
 }
