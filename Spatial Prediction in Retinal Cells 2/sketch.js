@@ -37,7 +37,7 @@ function setup()
    link1 = createA('https://michaelbach.de/ot/mot-feetLin/index.html', 'Inspired From');
    link1.position(1090,420);
    link2 = createA('https://souruly.github.io/Bio/Spatial%20Prediction%20in%20Retinal%20Cells%201/index.html', 'Circuit Diagram');
-   link2.position(1090,430);
+   link2.position(1090,440);
 }
 
 function toggleHighContrast()
