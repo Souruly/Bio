@@ -63,6 +63,8 @@ function Person(pId, x, y, infectedStatus) {
                         if (reinfectionPossible) {
                             this.infected = true;
                             people[i].infected = true;
+                            this.cured = false;
+                            people[i].cured = false;
                         }
                         else {
                             if (!this.cured) {
