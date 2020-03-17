@@ -17,6 +17,7 @@ let vaccineFoundSlider;
 let vaccineCureRateSlider;
 let startSimButton;
 let stopSimButton;
+let restartSimButton;
 let reinfectCheckbox;
 
 let rightPane;
@@ -49,6 +50,10 @@ function setup() {
     stopSimButton.position(1070, 250);
     stopSimButton.mousePressed(stopSim);
     stopSimButton.hide();
+    restartSimButton = createButton('Restart Simulation');
+    restartSimButton.position(1070, 250);
+    restartSimButton.mousePressed(restartSim);
+    restartSimButton.hide();
 
     makeRightPane();
     createA('https://www.washingtonpost.com/graphics/2020/world/corona-simulator/', 'Inspired from this article','_blank');
@@ -89,6 +94,12 @@ function startSim() {
 function stopSim() {
     state = 2;
     stopSimButton.hide();
+    restartSimButton.show();
+}
+
+function restartSim()
+{
+    location.reload();
 }
 
 function draw() {
