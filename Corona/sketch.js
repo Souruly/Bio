@@ -38,8 +38,9 @@ function setup() {
 
     vaccineFoundSlider = createSlider(100, 2050, 600, 50);
     vaccineFoundSlider.position(850, 220);
-    vaccineCureRateSlider = createSlider(0, 0.5, 0.01, 0.01);
-    vaccineCureRateSlider.position(850, 315);
+    vaccineCureRateSlider = createSlider(0, 0.5, 0.01, 0.001);
+    vaccineCureRateSlider.position(820, 315);
+    vaccineCureRateSlider.style('width', '200px');
     reinfectCheckbox = createCheckbox('Cured people can be reinfected', true);
     reinfectCheckbox.position(800, 250);
     reinfectCheckbox.changed(reinfectCheckboxEvent);
